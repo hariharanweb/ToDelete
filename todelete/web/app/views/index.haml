@@ -1,0 +1,18 @@
+!!!
+%html
+  %head
+    -%w{env zepto ICanHaz underscore calatrava bridge pageHelper}.each do |filename|
+      %script(type="text/javascript" src="scripts/#{filename}.js")
+
+    %script(type="text/javascript" src="scripts/init.js")
+    -# Load all feature JS files
+    = render_partial 'web/app/views/load_file'
+
+  %body
+    %div#app_container.container
+      = render_page "converter/conversionForm"
+
+  :javascript
+    $(document).ready(function(){
+      example.converter.start();      
+    });

@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <link href='../assets/styles/reset.css' media='all' rel='stylesheet' type='text/css' />
+    <link href='../assets/styles/app.css' media='all' rel='stylesheet' type='text/css' />
+    <link href='../assets/styles/common.css' media='all' rel='stylesheet' type='text/css' />
+    <link href='../assets/styles/device.css' media='all' rel='stylesheet' type='text/css' />
+    <script src='../assets/scripts/env.js' type='text/javascript'></script>
+    <script src='../assets/scripts/zepto.js' type='text/javascript'></script>
+    <script src='../assets/scripts/ICanHaz.js' type='text/javascript'></script>
+    <script src='../assets/scripts/underscore.js' type='text/javascript'></script>
+    <script src='../assets/scripts/calatrava.js' type='text/javascript'></script>
+    <script src='../assets/scripts/bridge.js' type='text/javascript'></script>
+    <script src='../assets/scripts/shell.js' type='text/javascript'></script>
+    <script src='../assets/scripts/pageHelper.js' type='text/javascript'></script>
+    <script type='text/javascript'>
+      //<![CDATA[
+        $(document).ready(function() {
+          window.batSignal = tw.batSignal();
+        });
+      //]]>
+    </script>
+    <script src='../assets/scripts/page.conversionForm.js' type='text/javascript'></script>
+    <script type='text/javascript'>
+      //<![CDATA[
+        $(document).ready(function() {
+          window.conversionFormView = calatrava.pageView.conversionForm();
+        });
+      //]]>
+    </script>
+  </head>
+  <body>
+    <div class='container' id='app_container'>
+      <div class='page' id='conversionForm'>
+  <script id='currencyDropdownTmpl' type='text/html'>
+    {{#currencies}}
+    <option value="{{code}}" {{^enabled}}disabled{{/enabled}} {{#selected}}selected{{/selected}}> {{code}} </option>
+    {{/currencies}}
+  </script>
+  <h3>THE BEST CURRENCY CONVERTER EVER</h3>
+  <select id='in_currency'></select>
+  <input id='in_amount' placeholder='amount' type='number' />
+  <select id='out_currency'></select>
+  <br />
+  <button id='convert'>GO</button>
+  <input id='out_amount' placeholder='no result' readonly='true' />
+</div>
+    </div>
+  </body>
+</html>

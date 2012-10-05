@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StationSelectActivity" >
+
+    <AutoCompleteTextView
+        android:id="@+id/station"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="166dp"
+        android:ems="10"
+        android:hint="@string/station_name"
+        android:imeOptions="actionDone"
+        android:inputType="textAutoComplete"
+		android:textSize="16sp"
+		android:dropDownHeight="400dp"
+		android:dropDownWidth="250dp"
+		android:completionThreshold="2"		
+		>
+        <requestFocus />
+        </AutoCompleteTextView>
+    
+
+    <RadioGroup
+        android:id="@+id/directionGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/station"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp" 
+        >
+
+        <RadioButton
+            android:id="@+id/departure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Departures" 
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/arrival"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Arrivals" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/get"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/station"
+        android:layout_alignRight="@+id/station"
+        android:layout_below="@+id/directionGroup"
+        android:layout_marginTop="35dp"
+        android:text="Go"  android:onClick="searchTrainsForStation"/>
+
+    
+</RelativeLayout>
